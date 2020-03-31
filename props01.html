@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title>Vue Sample</title>
+</head>
+
+<body>
+    <div id="app">
+       <child-comp v-bind:link-data="p_message"></child-comp>
+    </div>
+
+    <script src="https://unpkg.com/vue@2.3.3"></script>
+    <script>
+        Vue.component('child-comp', {
+            props: ['linkData'],
+            template:'<p>{{linkData}}</p>'
+        });
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                p_message: 'data from parent'
+            }
+        })
+    </script>
+</body>
+
+</html>
